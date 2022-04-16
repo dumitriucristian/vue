@@ -33,12 +33,19 @@
                         </div>
                         <div class="flex justify-end bg-gray-300 p-1">
                             <button class="bg-blue-500 text-white px-3 py-1 rounded-md m-1 uppercase font-bold">To Do</button>
-                            <button class="bg-green-500 text-white px-3 py-1 rounded-md m-1 uppercase font-bold">Done</button>
+                            <button class="bg-green-500 text-white px-3 py-1 rounded-md m-1 uppercase font-bold" @click="setDone(task)">Done</button>
                             <button class="bg-red-500 text-white px-3 py-1 rounded-md m-1 uppercase font-bold">Blocked</button>
                         </div>
                     </li>
                      `,
            props: ['task'],
+           methods:{
+               setDone(task){
+                   console.log(task)
+                   task.status ="done"
+               }
+
+           }
        });
 
        app.component(
